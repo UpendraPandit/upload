@@ -9,11 +9,11 @@ const app = express();
 var files = 'https://miro.medium.com/max/1400/1*5U1_u5xB3CGakEdmzL2LSA.png';
 // Set S3 endpoint to DigitalOcean Spaces
 //Check the endpoint
-const spacesEndpoint = new aws.Endpoint('nyc1.digitaloceanspaces.com');
+const spacesEndpoint = new aws.Endpoint('sfo3.digitaloceanspaces.com');
 const s3 = new aws.S3({
   endpoint: spacesEndpoint,
-  accessKeyId:'DO004YQY9YKT7K7LWYZK',
-  secretAccessKey:'yuwGLmhr2yiQJ6FG7bx8wLUEJpWpQkUIY2rUdl6lYXc'
+  accessKeyId:'DO00PYHPT46GW8BEM92G',
+  secretAccessKey:'Oyv5S8wYuheetiWQJHNTQgF2o5tONjI+cRRND1/HdM0'
 
 
 });
@@ -23,7 +23,7 @@ const upload = multer({
   storage: multerS3({
     s3: s3,
     //check the bucket name
-    bucket: 'imagebucket',
+    bucket: 'image-db',
     acl: 'public-read',
   
     key: function (request, files, cb) {
