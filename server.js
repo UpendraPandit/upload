@@ -12,8 +12,8 @@ var files = 'https://miro.medium.com/max/1400/1*5U1_u5xB3CGakEdmzL2LSA.png';
 const spacesEndpoint = new aws.Endpoint('sfo3.digitaloceanspaces.com');
 const s3 = new aws.S3({
   endpoint: spacesEndpoint,
-  accessKeyId:'DO00MBGJXGQMHAMVQNLT',
-  secretAccessKey:'B2r8seFfl5zL+kM1CLFiAZF/wkjZaPG4i9l2eZuARv0'
+  accessKeyId:'DO00C27NVKDFQQV2VN9D',
+  secretAccessKey:'vC2EpcIaWZaMbzX2hfNNd+wAXRDV1M0GaPfw9N/gNsE'
 
 
 });
@@ -23,7 +23,7 @@ const upload = multer({
   storage: multerS3({
     s3: s3,
     //check the bucket name
-    bucket: 'imagespace',
+    bucket: 'majorproject',
     acl: 'public-read',
   
     key: function (request, files, cb) {
